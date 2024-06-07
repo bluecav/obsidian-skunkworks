@@ -1,0 +1,31 @@
+{
+  "callouts": {
+    "custom": [
+      "tasks"
+    ],
+    "settings": {
+      "tasks": [
+        {
+          "changes": {
+            "icon": "lucide-check",
+            "color": "93, 143, 86"
+          }
+        }
+      ],
+      "multi-column": [
+        {
+          "changes": {
+            "icon": "lucide-users-2",
+            "color": "13, 134, 227"
+          }
+        }
+      ]
+    }
+  },
+  "calloutDetection": {
+    "obsidianFallbackForced": false,
+    "obsidian": true,
+    "theme": true,
+    "snippet": true
+  }
+}

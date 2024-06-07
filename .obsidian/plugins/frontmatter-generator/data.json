@@ -1,0 +1,13 @@
+{
+  "template": "{\nfolder: file.parent.path,\n title: file.basename,\n tags: \"\",\n}",
+  "folderToIgnore": "90 - Templates\n90 - Templates/10 - Notes",
+  "internal": {
+    "ignoredFolders": [
+      "90 - Templates",
+      "90 - Templates/10 - Notes"
+    ]
+  },
+  "runOnModifyNotInFile": true,
+  "runOnModifyInFile": true,
+  "sortYamlKey": true
+}

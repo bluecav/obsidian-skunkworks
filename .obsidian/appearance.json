@@ -1,0 +1,19 @@
+{
+  "accentColor": "",
+  "cssTheme": "Minimal",
+  "enabledCssSnippets": [
+    "extended-colorschemes",
+    "custom-rainbow-colors",
+    "First level folder bg",
+    "sleek-callouts",
+    "tag_cloud_v2",
+    "todoist-plugin",
+    "properties-two-columns",
+    "styled-multi-column-properties",
+    "multi-column-easy",
+    "MCL Gallery Cards",
+    "MCL Multi Column",
+    "MCL Wide Views"
+  ],
+  "translucency": false
+}

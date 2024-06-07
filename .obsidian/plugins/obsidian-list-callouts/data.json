@@ -1,0 +1,55 @@
+[
+  {
+    "color": "255, 214, 0",
+    "char": "&",
+    "icon": "lucide-star"
+  },
+  {
+    "color": "255, 145, 0",
+    "char": "?",
+    "icon": "question-mark-glyph"
+  },
+  {
+    "color": "255, 23, 68",
+    "char": "!",
+    "icon": "lucide-alert-octagon"
+  },
+  {
+    "color": "124, 77, 255",
+    "char": "~",
+    "icon": "lucide-bookmark"
+  },
+  {
+    "color": "0, 184, 212",
+    "char": "@",
+    "icon": "lucide-key"
+  },
+  {
+    "color": "0, 200, 83",
+    "char": "$",
+    "icon": "lucide-thumbs-up"
+  },
+  {
+    "color": "158, 158, 158",
+    "char": "\"",
+    "icon": "lucide-quote"
+  },
+  {
+    "char": "^",
+    "color": "184, 61, 161",
+    "icon": "lucide-file-text",
+    "custom": true
+  },
+  {
+    "char": "%",
+    "color": "0, 146, 219",
+    "icon": "lucide-megaphone",
+    "custom": true
+  },
+  {
+    "char": ";",
+    "color": "12, 192, 48",
+    "icon": "lucide-check-square",
+    "custom": true
+  }
+]

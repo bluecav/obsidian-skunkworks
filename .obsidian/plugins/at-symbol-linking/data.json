@@ -1,0 +1,15 @@
+{
+  "triggerSymbol": "@",
+  "limitLinkDirectories": [
+    "40 - People"
+  ],
+  "includeSymbol": true,
+  "showAddNewNote": true,
+  "addNewNoteTemplateFile": "",
+  "addNewNoteDirectory": "40 - People",
+  "useCompatibilityMode": false,
+  "leavePopupOpenForXSpaces": 0,
+  "invalidCharacterRegex": "[[]^|#]",
+  "invalidCharacterRegexFlags": "i",
+  "removeAccents": true
+}

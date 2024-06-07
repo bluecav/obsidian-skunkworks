@@ -1,0 +1,841 @@
+/*****************************************************************************
+ * NOTE TOOLBAR
+ * 
+ * Author: Chris Gurney https://chrisgurney.ca/ https://github.com/chrisgurney/
+ * License: Feel free to use and modify. Attribution would be appreciated.
+ * 
+ * Adds an unobtrusive toolbar that blends well with your Obsidian note, made 
+ * up of any items you provide in a standard markdown list.
+ * 
+ * INSTALLATION
+ * 
+ * Install the Note Toolbar plugin via Community Plugins.
+ *
+ * OR (if you just want to use callout CSS)
+ *   1. Add this CSS file to your .obsidian/snippets folder in your vault.
+ *   2. Enable it in Obsidian Settings... > Appearance > CSS Snippets
+ * 
+ * USAGE
+ * https://github.com/chrisgurney/obsidian-note-toolbar/wiki/Note-Toolbar-Callouts
+ * 
+ * Create a toolbar by creating a callout containing any list, like this:
+ * 
+ * > [!note-toolbar]
+ * > - [Link Menu Item](obsidian://...)
+ * > - [[Page Menu Item]]
+ * > - Menu Item That Won't Do Anything
+ * 
+ * To control its appearance, optionally add metadata by adding a | and listing
+ * options, for example:
+ *
+ * > [!note-toolbar|border-right-sticky]
+ *
+ * STYLES
+ * 
+ * Options are as follows, and can be combined (per the above example):
+ *   border = adds a top and bottom border
+ *   noborder = turns off border (default)
+ *   button = applies a button-like appearance
+ *   center = aligns items center
+ *   even = distributes items evenly
+ *   floatl = floats the toolbar left of nearby content
+ *   floatr = floats the toolbar right of nearby content
+ *   nofloat = turns off float (default)
+ *   left = aligns items left (default)
+ *   right = aligns items right
+ *   sticky = sticks toolbar to top on scroll
+ *   nosticky = turns off stickiness (default)
+ * 
+ * STYLES (MOBILE OVERRIDES)
+ * 
+ * Add these mobile-equivalent styles to override the defaults, above:
+ *   mbrder = border
+ *   mnbrder = noborder
+ *   mbtn = button
+ *   mctr = center
+ *   mevn = even
+ *   mfltl = floatl
+ *   mfltr = floatr
+ *   mnflt = nofloat
+ *   mlft = left
+ *   mrght = right
+ *   mstcky = sticky
+ *   mnstcky = nosticky
+ * 
+ * USAGE TIPS
+ * 
+ * - Toolbars can be placed anywhere in a note, even within other callouts!
+ * - That said, you may want to place the toolbar one space below the top of a 
+ *   note, so that the callout code doesn't get expanded when switching to the note
+ *   in Editing mode.
+ * - Below "settings" comment block is for the Style Settings plugin, and can be ignored
+ *   if you are just copy/pasting this CSS for a snippet.
+ *   https://github.com/mgmeyers/obsidian-style-settings
+ * 
+ * LATEST DOCUMENTATION
+ * 
+ * https://github.com/chrisgurney/obsidian-note-toolbar/wiki/Note-Toolbar-Callouts
+ * 
+ *****************************************************************************/
+/* @settings
+
+name: Note Toolbar
+id: note-toolbar
+settings:
+    -
+        id: toolbar-styles
+        title: Toolbar
+        type: heading
+        level: 1
+        collapsed: true
+    -
+        id: cg-nt-tbar-bg-color
+        title: Background color
+        type: variable-themed-color
+        opacity: true
+        format: hex
+        default-light: '#'
+        default-dark: '#'
+    -
+        id: cg-nt-tbar-border-color
+        title: Border color
+        description: Top and bottom borders only
+        type: variable-themed-color
+        opacity: true
+        format: hex
+        default-light: '#'
+        default-dark: '#'
+    -
+        id: cg-nt-tbar-border-radius
+        title: Border radius (in px units)
+        type: variable-number
+        default: 0
+        format: px
+    -
+        id: cg-nt-tbar-padding-inline
+        title: Left + Right padding (in em units)
+        description: Helpful if you've set a background color for the toolbar (larger = more indented)
+        type: variable-number
+        default: 0
+        format: em
+    -
+        id: cg-nt-tbar-top-sticky-pos-desktop
+        title: Top sticky offset desktop (in px units)
+        description: For some themes, the toolbar doesn't quite stick to the top (larger = further from the top). Note, this will not apply when Position = Top (fixed).
+        type: variable-number
+        default: -40
+        format: px
+    -
+        id: cg-nt-tbar-top-sticky-pos-mobile
+        title: Top sticky offset mobile (in rem units)
+        description: See above.
+        type: variable-number
+        default: -1
+        format: rem
+    -
+        id: titlebar-heading
+        title: Toolbar Items
+        type: heading
+        level: 1
+        collapsed: true
+    -
+        id: cg-nt-item-bg-color-hover
+        title: Background color (on hover)
+        type: variable-themed-color
+        opacity: true
+        format: hex
+        default-light: '#'
+        default-dark: '#'
+    -
+        id: cg-nt-item-border-radius
+        title: Border radius (in px units)
+        type: variable-number
+        default: 5
+        format: px
+    -
+        id: cg-nt-item-text-color
+        title: Text color
+        type: variable-themed-color
+        opacity: true
+        format: hex
+        default-light: '#'
+        default-dark: '#'
+    -
+        id: cg-nt-item-text-color-hover
+        title: Text color (on hover)
+        type: variable-themed-color
+        opacity: true
+        format: hex
+        default-light: '#'
+        default-dark: '#'
+    -
+        id: titlebar-heading
+        title: Toolbar Items (button style)
+        type: heading
+        level: 1
+        collapsed: true
+    -
+        id: cg-nt-item-button-bg-color
+        title: Background color
+        type: variable-themed-color
+        opacity: true
+        format: hex
+        default-light: '#'
+        default-dark: '#'
+*/
+
+body {
+    --cg-nt-tbar-bg-color: var(--background-primary);
+    --cg-nt-tbar-border-color: var(--hr-color);
+    --cg-nt-tbar-border-radius: 0px;
+    --cg-nt-tbar-padding-inline: 0em;
+    --cg-nt-tbar-top-sticky-pos-desktop: calc(var(--header-height) * -1);
+    --cg-nt-tbar-top-sticky-pos-mobile: -1rem;
+    --cg-nt-item-bg-color-hover: var(--background-modifier-hover);
+    --cg-nt-item-border-radius: var(--button-radius);
+    --cg-nt-item-button-bg-color: var(--interactive-normal);
+    --cg-nt-item-text-color: var(--metadata-label-text-color);
+    --cg-nt-item-text-color-hover: var(--text-normal);
+}
+
+.metadata-container {
+    margin-block-end: 0;
+}
+
+.cm-embed-block:has(> div > .callout[data-callout="note-toolbar"]) {
+    &:hover {
+        box-shadow: none !important; /* hide the border on hover of the toolbar callout */
+        & .edit-block-button {
+            display: none; /* hide the edit icon that appears */
+        }
+    }
+}
+
+.cm-embed-block:has(> div > .callout[data-callout="note-toolbar"][data-callout-metadata*="sticky"]) {
+    position: sticky;
+    top: var(--cg-nt-tbar-top-sticky-pos-desktop);
+    z-index: 2;
+    .is-mobile &, .is-phone & {
+        top: var(--cg-nt-tbar-top-sticky-pos-mobile);
+    }
+}
+
+.is-mobile .cm-embed-block:has(> div > .callout[data-callout="note-toolbar"][data-callout-metadata*="mstcky"]) {
+    position: sticky;
+    z-index: 2;
+}
+.cm-embed-block:has(> div > .callout[data-callout="note-toolbar"][data-callout-metadata*="mstcky"]) {
+    .is-mobile &, .is-phone & {
+        top: var(--cg-nt-tbar-top-sticky-pos-mobile);
+    }
+}
+
+/* default, if not specified */
+.cm-embed-block:has(> div > .callout[data-callout="note-toolbar"][data-callout-metadata*="nosticky"]) {
+    top: inherit;
+    position: relative;
+}
+
+.cm-embed-block:has(> div > .callout[data-callout="note-toolbar"][data-callout-metadata*="mnstcky"]) {
+    .is-mobile &, .is-phone & {
+        top: inherit;
+        position: relative;
+    }
+}
+
+.callout[data-callout="note-toolbar"] {
+
+    background-color: var(--cg-nt-tbar-bg-color);
+    
+    .callout & {
+        background-color: inherit;
+    }
+
+    border-radius: var(--cg-nt-tbar-border-radius);
+    padding: 0;
+    padding-inline: var(--cg-nt-tbar-padding-inline);
+    width: 100%;
+    /* max-width: var(--file-line-width); */
+
+    & .callout-title {
+        display: none;
+    }
+
+    & .callout-content {
+
+        & ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0rem;
+            margin: 0.5em 0 0.5em 0;
+            padding-inline-start: 0;
+        }
+    
+        & li {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            
+            & div.list-bullet {
+                display: none; /* remove for reading mode */
+            }
+            &.hide-on-mobile {
+                .is-mobile & {
+                    display: none;
+                }
+            }
+            &.hide-on-desktop {
+                display: none;
+                .is-mobile & {
+                    display: block !important;
+                }
+            }
+
+        }
+
+        & a {
+            color: var(--cg-nt-item-text-color);
+            padding: 0.5em 0.75em 0.5em 0.75em;
+            display: block;
+            text-decoration: none;
+            font-size: var(--metadata-label-font-size);
+            border-radius: var(--cg-nt-item-border-radius);
+            height: 100%;
+        }
+
+        & a:focus-within {
+            border-radius: var(--metadata-property-radius);
+            box-shadow: inset 0 0 0 1px var(--background-modifier-border);
+            box-shadow: inset 0 0 0 2px var(--background-modifier-border-focus);
+        }
+
+        & a:hover {
+            box-shadow: none;
+            opacity: var(--icon-opacity-hover);
+            background-color: var(--cg-nt-item-bg-color-hover);
+            color: var(--cg-nt-item-text-color-hover);
+        }
+
+        & a.external-link {
+            background-image: none; /* hide the external link icon */
+        }
+
+    }
+
+    /*************************************************************************
+     * Toolbar Styles (sticky's at top)
+     *************************************************************************/
+
+    &[data-callout-metadata*="border"] {
+        border-top: solid 1px var(--cg-nt-tbar-border-color);
+        border-bottom: solid 1px var(--cg-nt-tbar-border-color);
+        border-radius: 0;
+    }
+
+    &[data-callout-metadata*="mbrder"] {
+        .is-mobile & {
+            border-top: solid 1px var(--cg-nt-tbar-border-color);
+            border-bottom: solid 1px var(--cg-nt-tbar-border-color);
+            border-radius: 0;
+        }
+    }
+
+    &[data-callout-metadata*="noborder"] {
+        border: inherit;
+    }
+
+    &[data-callout-metadata*="mnbrder"] {
+        .is-mobile & {
+            border: inherit;
+        }
+    }
+
+    &[data-callout-metadata*="center"] ul {
+        justify-content: center;
+    }
+    
+    &[data-callout-metadata*="mctr"] ul {
+        .is-mobile & {
+            justify-content: center;
+        }
+    }
+
+    &[data-callout-metadata*="even"] ul {
+        justify-content: space-evenly;
+    }
+    
+    &[data-callout-metadata*="mevn"] ul {
+        .is-mobile & {
+            justify-content: space-evenly;
+        }
+    }
+
+    &[data-callout-metadata*="floatl"] {
+        float: left;
+        width: inherit;
+    }
+
+    &[data-callout-metadata*="mfltl"] {
+        .is-mobile & {
+            float: left;
+            width: inherit;
+        }
+    }
+
+    &[data-callout-metadata*="floatr"] {
+        float: right;
+        width: inherit;
+    }
+
+    &[data-callout-metadata*="mfltr"] {
+        .is-mobile & {
+            float: right;
+            width: inherit;
+        }
+    }
+
+    &[data-callout-metadata*="nofloat"] {
+        float: inherit;
+    }
+
+    &[data-callout-metadata*="mnflt"] {
+        .is-mobile & {
+            float: inherit;
+        }
+    }
+
+    &[data-callout-metadata*="left"] ul {
+        justify-content: left;
+    }
+
+    &[data-callout-metadata*="mlft"] ul {
+        .is-mobile & {
+            justify-content: left;
+        }
+    }
+
+    &[data-callout-metadata*="right"] ul {
+        justify-content: right;
+    }
+
+    &[data-callout-metadata*="mrght"] ul {
+        .is-mobile & {
+            justify-content: right;
+        }
+    }
+
+    &[data-callout-metadata*="button"] ul {
+        gap: var(--size-4-2);
+        & a {
+            background-color: var(--cg-nt-item-button-bg-color);
+            box-shadow: var(--input-shadow);
+        }
+    }
+
+    &[data-callout-metadata*="mbtn"] ul {
+        gap: var(--size-4-2);
+        & a {
+            background-color: var(--cg-nt-item-button-bg-color);
+            box-shadow: var(--input-shadow);
+        }
+    }
+
+    &.cg-note-toolbar-callout {
+        /* margin-top: fix for reading mode */
+        margin-top: 0; 
+        & a {
+            align-items: center;
+            display: flex;
+            gap: 0 0.5em;
+            & svg {
+                display: block;
+                margin: 0 auto;
+            }
+        }
+    }
+    
+}
+
+/*************************************************************************
+ * Supporting Toolbar Styles
+ *************************************************************************/
+
+#cg-note-toolbar-marker {
+    visibility: hidden;
+}
+
+.cg-note-toolbar-container {
+    border-radius: var(--cg-nt-tbar-border-radius);
+    box-shadow: 0 0 0 1px var(--cg-nt-tbar-bg-color);
+    margin-bottom: 1em;
+    .is-mobile & {
+        margin: 0.4em 0 1em 0;
+    }
+    &:hover {
+        /* fix: (#14) flickering problem experienced with Banner plugin beta in use */
+        overflow: inherit !important;
+    }
+    /* width: var(--var-max-width);
+    max-width: var(--var-max-width); */
+}
+
+.cg-note-toolbar-position-top,
+.cg-note-toolbar-reading-sticky {
+    background-color: var(--cg-nt-tbar-bg-color);
+    font-size: var(--font-text-size);
+    margin-bottom: 0;
+    padding: var(--file-margins);
+    padding-bottom: 0;
+    padding-top: 0;
+    &:hover {
+        /* undoes fix (#14) which causes a layout shift on hover */
+        overflow: visible !important;
+    }
+    & .cg-note-toolbar-callout {
+        border-top: none !important;
+        margin-bottom: 0;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: var(--file-line-width);
+        transition: border-top 0.5s ease-out;
+    }
+}
+
+/*****************************************************************************
+* Settings Styles (for Note Toolbar Plugin)
+******************************************************************************/
+
+.note-toolbar-setting-toolbar-list, .note-toolbar-setting-item {
+    border-radius: 8px;
+    border: 1px solid var(--background-modifier-border);
+    margin: 0em 0em 1em 0em;
+    padding: 1.5em 1.5em 0.5em 1.5em;
+    .is-mobile & {
+        padding: 1em;
+    }
+}
+
+.note-toolbar-setting-toolbar-list {
+    & svg {
+        height: var(--font-ui-smaller);
+        width: var(--font-ui-smaller);
+        display: block;
+    }
+    &:has(:last-child) {
+        .is-mobile & {
+            padding-bottom: 0;
+        }
+    }
+    & .setting-item-description {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.note-toolbar-setting-toolbar-list-preview-item {
+    align-items: center;
+    display: flex;
+    margin-right: 4px;
+    & span {
+        margin-right: 2px;
+        white-space: nowrap;
+    }
+}
+
+.note-toolbar-setting-empty-message {
+    color: var(--text-muted);
+    height: var(--input-height);
+    padding-bottom: 1em;
+    .note-toolbar-setting-item-styles & {
+        padding-bottom: 0;    
+    }
+}
+
+.note-toolbar-setting-error-message {
+    color: var(--color-red);
+    padding-bottom: 1em;
+    .note-toolbar-setting-item-top-container & {
+        padding-top: 1em;
+    }
+}
+
+.note-toolbar-setting-error {
+    & input[type="text"], & input[type="search"] {
+        box-shadow: 0 0 0 1px var(--color-red);
+    }
+}
+
+.note-toolbar-setting-button {
+    border-top: none;
+    padding-top: 0 !important;
+    padding-bottom: 1em !important;
+}
+
+.note-toolbar-setting-no-controls {
+    & .setting-item-control {
+        display: none;
+    }
+    & .setting-item-description a {
+        white-space: nowrap;
+        &:focus-within {
+            box-shadow: 0 0 0 2px;
+        }
+    }
+}
+
+.note-toolbar-setting-spaced {
+    margin-top: 2em !important;
+}
+
+.note-toolbar-setting-folder-list-item-container {
+    display: flex;
+    & .setting-item {
+        border-bottom: none !important;
+    }
+}
+
+.note-toolbar-setting-item-top-container {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+    & .setting-item {
+        border-bottom: none !important;
+    }
+}
+
+.note-toolbar-setting-item-toggles-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    & .setting-item {
+        border-bottom: none !important;
+    }
+}
+
+.note-toolbar-setting-item-icon {
+    padding-top: 0 !important;
+    & .setting-item-info {
+        display: none;
+    }
+    & .setting-item-control {
+        margin-top: 0 !important;
+        & .clickable-icon[data-note-toolbar-no-icon="true"] {
+            & svg {
+                filter: brightness(0.5);
+            }
+        }    
+        & .clickable-icon:focus-within {
+            border-radius: var(--input-radius);
+            box-shadow: 0 0 0 1px var(--background-modifier-border);
+            box-shadow: 0 0 0 2px var(--background-modifier-border-focus);
+        }
+    }
+}
+
+.note-toolbar-icon-suggestion {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    & svg {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+.note-toolbar-icon-action-button-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 0 1em;
+}
+
+.note-toolbar-setting-item-fields {
+    display: flex;
+    gap: 0 1em;
+}
+
+.note-toolbar-setting-item-field {
+    border-top: none !important;
+    flex-grow: 1;
+    padding-top: 0 !important;
+    & .setting-item-info {
+        display: none;
+    }
+    & .setting-item-control {
+        width: 100%;
+        & input[type="text"] {
+            width: 100%;
+        }
+        .is-mobile & {
+            margin-top: 0 !important;
+        }
+    }
+}
+
+.note-toolbar-setting-item-link-container {
+    display: flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    column-gap: 1em;
+    row-gap: 1em;
+    & .setting-item {
+        padding: 0;
+    }
+    & .setting-item-info {
+        display: none;
+    }
+    & .setting-item-control {
+        .is-mobile & {
+            margin-top: 0 !important;
+        }
+    }
+}
+
+.note-toolbar-setting-item-link {
+    width: 100%;
+}
+
+.note-toolbar-setting-item-field-link {
+    border-top: none !important;
+    /* default to none, so we can render it ahead of time; set visible based on type to show */
+    display: none;
+    padding-top: 0 !important;
+    width: 100%;
+    & .setting-item-control, .search-input-container {
+        width: 100%;
+        & input[type="text"] {
+            width: 100%;
+        }
+    }
+    &[data-active="true"] {
+        display: inherit !important;
+    }
+    &[data-active="false"] {
+        display: none !important;
+    }
+}
+
+.note-toolbar-setting-item-toggle {
+    border-top: none !important;
+    padding: 0.75em 0 0.75em 0 !important;
+    &:not(:first-child) {
+        padding-left: 1em !important;
+    }
+    .is-mobile & {
+        padding-bottom: 0em !important;
+    }
+    & .setting-item-info {
+        margin-right: 0.5em;
+    }
+    & .setting-item-name {
+        color: var(--text-muted);
+        font-size: var(--font-ui-smaller);
+    }
+}
+
+.note-toolbar-setting-item-controls {
+    margin-left: auto;
+    .setting-item {
+        & .setting-item-info {
+            display: none;
+        }
+        .is-mobile & {
+            padding-top: 0 !important;
+        }
+        & .setting-item-control {
+            .is-mobile & {
+                margin-top: 0 !important;
+            }
+            & .clickable-icon:focus-within {
+                border-radius: var(--input-radius);
+                box-shadow: 0 0 0 1px var(--background-modifier-border);
+                box-shadow: 0 0 0 2px var(--background-modifier-border-focus);
+            }
+        }
+    }
+}
+
+.note-toolbar-setting-item-fields-and-controls {
+    display: flex;
+    flex-direction: column-reverse;
+    flex-grow: 1;
+    flex-wrap: wrap;
+}
+
+.note-toolbar-setting-item-styles {
+    border-top: none !important;
+    & > .setting-item-info {
+        align-self: flex-start;
+    }
+}
+
+.note-toolbar-setting-item-style {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: end;
+    gap: 0.25em;
+    width: 100%;
+    .setting-item {
+        border-top: none !important;
+        border: dashed 1px var(--pill-color-remove) !important;
+        border-radius: var(--pill-radius);
+        padding: 0 0.25em 0 0.75em !important;
+        flex-wrap: nowrap;
+        height: var(--input-height);
+        .is-mobile & {
+            flex-direction: row !important;
+            align-items: center !important;
+        }
+        &:first-child {
+            border: dashed 1px var(--pill-color-remove) !important;
+        }
+        &:last-child {
+            border: none !important;
+            padding: 0em !important;
+            flex-basis: 100%;
+        }
+        & .setting-item-info {
+            margin-right: 0.25em;
+            color: var(--pill-color);
+            & .setting-item-name {
+                font-size: var(--metadata-input-font-size);
+            }
+        }
+        & .setting-item-control {
+            --icon-size: var(--icon-xs);
+            --icon-stroke: var(--icon-xs-stroke-width);
+            .is-mobile & {
+                margin-top: 0 !important;
+            }
+            .is-phone & {
+                width: inherit !important;
+            }
+            & .clickable-icon:focus-within {
+                border-radius: var(--input-radius);
+                box-shadow: 0 0 0 1px var(--background-modifier-border);
+                box-shadow: 0 0 0 2px var(--background-modifier-border-focus);
+            }
+            & select[class="dropdown"] {
+                border-radius: 2em;
+                font-size: var(--metadata-input-font-size);
+                max-width: 50%;
+            }
+        }
+    }
+}
+
+.note-toolbar-setting-mini-dialog {
+    width: calc(var(--dialog-width) / 1.5);
+}
+
+.note-toolbar-setting-modal-container {
+    .is-phone & {
+        /* fix/workaround for Obsidian v1.5.11 bug: modals opened from settings have an inaccessible close button */
+        top: var(--safe-area-inset-top);
+    }
+}
+
+.vertical-tab-content.note-toolbar-setting-modal {
+    padding-left: var(--size-4-5);
+    padding-right: var(--size-4-5);
+}

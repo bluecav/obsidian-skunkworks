@@ -1,0 +1,296 @@
+{
+  "version": 2,
+  "projects": [
+    {
+      "fieldConfig": {
+        "Status": {
+          "options": [
+            "In Progress",
+            "Delegated",
+            "On Hold",
+            "Done"
+          ]
+        }
+      },
+      "defaultName": "",
+      "templates": [],
+      "excludedNotes": [],
+      "isDefault": false,
+      "dataSource": {
+        "kind": "folder",
+        "config": {
+          "path": "30 - Initiatives/PD Tower",
+          "recursive": true
+        }
+      },
+      "newNotesFolder": "",
+      "views": [
+        {
+          "config": {},
+          "filter": {
+            "conditions": []
+          },
+          "colors": {
+            "conditions": []
+          },
+          "sort": {
+            "criteria": []
+          },
+          "id": "61855968-c904-42a9-abbf-bd8acf75d118",
+          "name": "Table",
+          "type": "table"
+        },
+        {
+          "config": {
+            "groupByField": "Status",
+            "includeFields": [
+              "tags"
+            ],
+            "columns": {
+              "Backlog": {
+                "weight": 0
+              },
+              "In Progress": {
+                "weight": 1
+              },
+              "Delegated": {
+                "weight": 2
+              },
+              "On Hold": {
+                "weight": 3
+              },
+              "Done": {
+                "weight": 4
+              }
+            },
+            "columnWidth": 200
+          },
+          "filter": {
+            "conditions": []
+          },
+          "colors": {
+            "conditions": []
+          },
+          "sort": {
+            "criteria": []
+          },
+          "id": "2ed5b498-ceb1-42b8-96ec-4a9edf0b35cb",
+          "name": "Status",
+          "type": "board"
+        }
+      ],
+      "id": "40b26f05-450e-46c8-a50a-2dcf0f0af1fe",
+      "name": "PD Tower"
+    },
+    {
+      "fieldConfig": {},
+      "defaultName": "",
+      "templates": [],
+      "excludedNotes": [],
+      "isDefault": false,
+      "dataSource": {
+        "kind": "folder",
+        "config": {
+          "path": "30 - Initiatives/PD Tower/Operational Efficiency",
+          "recursive": false
+        }
+      },
+      "newNotesFolder": "",
+      "views": [
+        {
+          "config": {},
+          "filter": {
+            "conditions": []
+          },
+          "colors": {
+            "conditions": []
+          },
+          "sort": {
+            "criteria": []
+          },
+          "id": "29e70ff6-8fdc-44e3-9aed-b47af4ae77cd",
+          "name": "Table",
+          "type": "table"
+        }
+      ],
+      "id": "4889410c-3930-4853-b6c1-590db3d1b8c7",
+      "name": "Operational Efficiency"
+    },
+    {
+      "fieldConfig": {},
+      "defaultName": "",
+      "templates": [],
+      "excludedNotes": [],
+      "isDefault": false,
+      "dataSource": {
+        "kind": "folder",
+        "config": {
+          "path": "30 - Initiatives/PD Tower/Timing Community",
+          "recursive": true
+        }
+      },
+      "newNotesFolder": "",
+      "views": [
+        {
+          "config": {},
+          "filter": {
+            "conditions": []
+          },
+          "colors": {
+            "conditions": []
+          },
+          "sort": {
+            "criteria": []
+          },
+          "id": "3418950a-024d-4d20-8ffd-139cd58c4827",
+          "name": "Table",
+          "type": "table"
+        }
+      ],
+      "id": "d30018b4-c81f-4452-94f0-0ddc3ebb8cd1",
+      "name": "Timing Community"
+    },
+    {
+      "fieldConfig": {},
+      "defaultName": "",
+      "templates": [],
+      "excludedNotes": [],
+      "isDefault": false,
+      "dataSource": {
+        "kind": "folder",
+        "config": {
+          "path": "30 - Initiatives",
+          "recursive": true
+        }
+      },
+      "newNotesFolder": "",
+      "views": [
+        {
+          "config": {},
+          "filter": {
+            "conditions": []
+          },
+          "colors": {
+            "conditions": []
+          },
+          "sort": {
+            "criteria": []
+          },
+          "id": "826d872b-ce22-4489-9285-da765d5554c4",
+          "name": "Table",
+          "type": "table"
+        }
+      ],
+      "id": "53ca0605-fc52-4ee5-8142-edea738eb545",
+      "name": "30 - Initiatives"
+    }
+  ],
+  "archives": [
+    {
+      "fieldConfig": {},
+      "defaultName": "",
+      "templates": [],
+      "excludedNotes": [],
+      "isDefault": false,
+      "dataSource": {
+        "kind": "folder",
+        "config": {
+          "path": "Projects - Demo Project",
+          "recursive": false
+        }
+      },
+      "newNotesFolder": "",
+      "views": [
+        {
+          "config": {
+            "fieldConfig": {
+              "name": {
+                "width": 360
+              },
+              "path": {
+                "hide": true
+              }
+            }
+          },
+          "filter": {
+            "conditions": []
+          },
+          "colors": {
+            "conditions": []
+          },
+          "sort": {
+            "criteria": []
+          },
+          "name": "Table",
+          "id": "cc9a54ae-0563-4250-81af-05eeff578749",
+          "type": "table"
+        },
+        {
+          "config": {
+            "groupByField": "status",
+            "orderSyncField": "weight"
+          },
+          "filter": {
+            "conditions": []
+          },
+          "colors": {
+            "conditions": []
+          },
+          "sort": {
+            "criteria": []
+          },
+          "name": "Board",
+          "id": "08cfe63f-e73b-4710-89ef-34613cd1c9d8",
+          "type": "board"
+        },
+        {
+          "config": {
+            "interval": "month",
+            "dateField": "due",
+            "checkField": "published"
+          },
+          "filter": {
+            "conditions": []
+          },
+          "colors": {
+            "conditions": []
+          },
+          "sort": {
+            "criteria": []
+          },
+          "name": "Calendar",
+          "id": "5095c71a-6fb0-497c-b677-a707f4f099d3",
+          "type": "calendar"
+        },
+        {
+          "config": {
+            "coverField": "image"
+          },
+          "filter": {
+            "conditions": []
+          },
+          "colors": {
+            "conditions": []
+          },
+          "sort": {
+            "criteria": []
+          },
+          "name": "Gallery",
+          "id": "a077e7db-1b39-489b-97ef-d511c0c98b10",
+          "type": "gallery"
+        }
+      ],
+      "name": "Demo project",
+      "id": "17441159-c89a-429b-94f1-931cc4ad06e0",
+      "path": "Projects - Demo Project"
+    }
+  ],
+  "preferences": {
+    "projectSizeLimit": 1000,
+    "frontmatter": {
+      "quoteStrings": "PLAIN"
+    },
+    "commands": [],
+    "linkBehavior": "open-editor"
+  }
+}

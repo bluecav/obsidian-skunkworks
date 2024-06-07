@@ -1,0 +1,39 @@
+{
+  "palette": {
+    "seed": 0,
+    "selected": "adaptive-soft",
+    "custom": "e12729-f37324-f8cc1b-72b043-007f4e"
+  },
+  "mixColors": true,
+  "transition": true,
+  "accessibility": {
+    "highTextContrast": false
+  },
+  "knownTags": {
+    "skills": 1,
+    "daily-note": 2,
+    "reddit": 3,
+    "youtube": 4,
+    "anuppuccin": 5,
+    "pomodoro": 6,
+    "css": 7,
+    "style-header": 8,
+    "style-custom-accent": 9,
+    "style-css-classes": 10,
+    "psychology": 11,
+    "mental-health": 12,
+    "gaslighting": 13,
+    "relationships": 14,
+    "note-taking": 15,
+    "obsidian": 16,
+    "pkm": 17,
+    "meeting": 18,
+    "mcl": 19,
+    "mcl/list-card": 1,
+    "cssClass": 20,
+    "todo": 21,
+    "table-100": 22,
+    "max": 23
+  },
+  "_version": 3
+}

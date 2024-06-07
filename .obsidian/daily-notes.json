@@ -1,0 +1,6 @@
+{
+  "format": "YYYY/MM-MMMM/YYYY-MM-DD-dddd/[daily-notes]-YYYY-MM-DD[.md]",
+  "folder": "10 - Daily Notes",
+  "template": "90 - Templates/10 - Notes/notes-template",
+  "autorun": false
+}

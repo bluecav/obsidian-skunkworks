@@ -1,0 +1,244 @@
+{
+  "main": {
+    "id": "a1227ae2e81c8958",
+    "type": "split",
+    "children": [
+      {
+        "id": "f8513217ddebfb5f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0226c43dec7bb4d2",
+            "type": "leaf",
+            "state": {
+              "type": "style-settings",
+              "state": {}
+            }
+          },
+          {
+            "id": "bf69ae9cd423e386",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "90 - Templates/10 - Notes/project-note.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "8a3642565a5cf197",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "90 - Templates/10 - Notes/project-note.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "df19be3ba952c6ff",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "90 - Templates/10 - Notes/folder-note-brief.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "379368dca03c549d",
+    "type": "split",
+    "children": [
+      {
+        "id": "58f48678a61dae63",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2e8c785862288ce8",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "e3d03089114763e9",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "15772172c23610b9",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "26f14f7612e56355",
+    "type": "split",
+    "children": [
+      {
+        "id": "77f6a88d8b40bb85",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f404d93099d3b810",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "90 - Templates/10 - Notes/folder-note-brief.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "cde0b6c3a1061a46",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "90 - Templates/10 - Notes/folder-note-brief.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "2a231e60f93ef014",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "f25071a4a29856e0",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "90 - Templates/10 - Notes/folder-note-brief.md"
+              }
+            }
+          },
+          {
+            "id": "2f50b419f2fab180",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "workspaces:Manage workspace layouts": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false,
+      "templater-obsidian:Templater": false,
+      "obsidian-projects:Open projects": false
+    }
+  },
+  "active": "df19be3ba952c6ff",
+  "lastOpenFiles": [
+    "90 - Templates/10 - Notes/meeting-template.md",
+    "90 - Templates/10 - Notes/folder-note-brief.md",
+    "90 - Templates/10 - Notes/people-mention-page.md",
+    "90 - Templates/10 - Notes/project-note.md",
+    "90 - Templates/10 - Notes/templater-startup-template.md",
+    "90 - Templates/10 - Notes/work-notes-template.md",
+    "Home.md",
+    "Welcome.md",
+    "00 - Launchpad/README.md",
+    "80 - Reference/10 - Obsidian/Dataview/Dataview JS Snippets.md",
+    "80 - Reference/10 - Obsidian/Dataview/DataviewJS/Metabind snippets.md",
+    "80 - Reference/10 - Obsidian/Dataview/DataviewJS/Folder Listing.md",
+    "80 - Reference/10 - Obsidian/Dataview/DataviewJS/Folder Listing-2024-04-11-23-09-26.md",
+    "80 - Reference/10 - Obsidian/Dataview/DataviewJS/Folder Listing-2024-04-11-23-14-45.md",
+    "81 - Prototypes/All Commands.md",
+    "80 - Reference/10 - Obsidian/All Commands.md",
+    "80 - Reference/10 - Obsidian/Markmap Example.md",
+    "80 - Reference/80 - GoodLinks/Inbox/Inbox.md",
+    "80 - Reference/80 - GoodLinks/Inbox/Is Your Partner Gaslighting You? Here's How to Know, According to Experts.md",
+    "00 - Launchpad/00 - Link Pages/Example.md",
+    "00 - Launchpad/00 - Link Pages/Example 1.md",
+    "00 - Launchpad/99 - Links old.md",
+    "00 - Launchpad/10 - Links Hub.md",
+    "00 - Launchpad/00 - Link Pages",
+    "90 - Templates/50 - JavaScript/linksHub.js",
+    "80 - Reference/10 - Obsidian/Styling/GUI Styling.md",
+    "90 - Templates/10 - Notes/therapy-template.md",
+    "Pasted image 20240605161142.png",
+    "90 - Templates/10 - Notes/personal-journal-template.md",
+    "Pasted image 20240605161149.png",
+    "90 - Templates/50 - JavaScript/dvLocatePersonReferences.js",
+    "IMG-20240416162100895.png",
+    "Pasted image 20240521092325.png",
+    "90 - Templates/50 - JavaScript/meetingTable.js",
+    "30 - Initiatives/PD Tower/Mental Health",
+    "30 - Initiatives/PD Tower/Operational Efficiency/3rd Branch Demo",
+    "30 - Initiatives/PD Tower/Operational Efficiency/Skills",
+    "Pasted image 20240416162432.png",
+    "30 - Initiatives/PD Tower/Operational Efficiency",
+    "30 - Initiatives/PD Tower/Timing Community",
+    "Projects - Demo Project",
+    "IMG-20240416162134205.png",
+    "IMG-20240416162316255.png",
+    "IMG-20240416162412879.png",
+    "Pasted image 20240416162314.png",
+    "Pasted image 20240416162132.png"
+  ]
+}

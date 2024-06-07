@@ -1,0 +1,39 @@
+{
+  "settings": {
+    "migrated": 4,
+    "iconPacksPath": ".obsidian/icons",
+    "fontSize": 16,
+    "emojiStyle": "none",
+    "iconColor": null,
+    "recentlyUsedIcons": [
+      "FasPeopleArrows",
+      "FasBook",
+      "FarNoteSticky",
+      "FasPeopleGroup",
+      "LiBrain"
+    ],
+    "recentlyUsedIconsSize": 5,
+    "rules": [],
+    "extraMargin": {
+      "top": 0,
+      "right": 4,
+      "bottom": 0,
+      "left": 0
+    },
+    "iconInTabsEnabled": true,
+    "iconInTitleEnabled": true,
+    "iconInFrontmatterEnabled": true,
+    "iconsBackgroundCheckEnabled": false,
+    "iconsInNotesEnabled": true,
+    "iconIdentifier": ":"
+  },
+  "90 - Templates/10 - Notes/folder-note-brief.md": {
+    "iconName": "FarNoteSticky"
+  },
+  "90 - Templates/10 - Notes/work-notes-template.md": {
+    "iconName": "FasBook"
+  },
+  "90 - Templates/10 - Notes/meeting-template.md": {
+    "iconName": "FasPeopleArrows"
+  }
+}
