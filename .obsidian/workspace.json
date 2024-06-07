@@ -45,7 +45,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "90 - Templates/10 - Notes/folder-note-brief.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               }
@@ -118,7 +118,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "90 - Templates/10 - Notes/folder-note-brief.md",
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -135,7 +135,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "90 - Templates/10 - Notes/folder-note-brief.md",
+                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -158,7 +158,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "90 - Templates/10 - Notes/folder-note-brief.md"
+                "file": "README.md"
               }
             }
           },
@@ -192,17 +192,17 @@
       "obsidian-projects:Open projects": false
     }
   },
-  "active": "df19be3ba952c6ff",
+  "active": "2e8c785862288ce8",
   "lastOpenFiles": [
-    "90 - Templates/10 - Notes/meeting-template.md",
     "90 - Templates/10 - Notes/folder-note-brief.md",
+    "90 - Templates/10 - Notes/meeting-template.md",
     "90 - Templates/10 - Notes/people-mention-page.md",
     "90 - Templates/10 - Notes/project-note.md",
     "90 - Templates/10 - Notes/templater-startup-template.md",
     "90 - Templates/10 - Notes/work-notes-template.md",
     "Home.md",
     "Welcome.md",
-    "00 - Launchpad/README.md",
+    "README.md",
     "80 - Reference/10 - Obsidian/Dataview/Dataview JS Snippets.md",
     "80 - Reference/10 - Obsidian/Dataview/DataviewJS/Metabind snippets.md",
     "80 - Reference/10 - Obsidian/Dataview/DataviewJS/Folder Listing.md",
